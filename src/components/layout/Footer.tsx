@@ -1,5 +1,6 @@
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Ship, Facebook, Instagram, Youtube, MapPin, Badge, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -22,11 +23,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Menu Utama</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#beranda" className="text-gray-300 hover:text-blue-400 transition duration-300">Beranda</a></li>
-              <li><a href="#profil" className="text-gray-300 hover:text-blue-400 transition duration-300">Profil</a></li>
-              <li><a href="#dokumen" className="text-gray-300 hover:text-blue-400 transition duration-300">Dokumen</a></li>
-              <li><a href="#program" className="text-gray-300 hover:text-blue-400 transition duration-300">Program</a></li>
-              <li><a href="#kontak" className="text-gray-300 hover:text-blue-400 transition duration-300">Kontak</a></li>
+              <li><Link to="/" className="text-gray-300 hover:text-blue-400 transition duration-300">Beranda</Link></li>
+              <li><Link to="/profil" className="text-gray-300 hover:text-blue-400 transition duration-300">Profil</Link></li>
+              <li><Link to="/dokumen" className="text-gray-300 hover:text-blue-400 transition duration-300">Dokumen</Link></li>
+              <li><Link to="/program" className="text-gray-300 hover:text-blue-400 transition duration-300">Program</Link></li>
+              <li><Link to="/kontak" className="text-gray-300 hover:text-blue-400 transition duration-300">Kontak</Link></li>
             </ul>
           </div>
           

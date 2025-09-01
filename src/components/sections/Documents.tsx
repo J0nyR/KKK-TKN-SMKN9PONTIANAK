@@ -1,18 +1,17 @@
 import { useInView } from '@/hooks/useInView';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
 import { Users, BookOpen, Wrench, LineChart, Handshake, Award, ClipboardCheck, FolderPlus, Download } from 'lucide-react';
 import React from 'react';
 
 const documentCategories = [
-  { title: 'Manajerial & Kelembagaan', icon: <Users className="text-blue-600 h-6 w-6" />, color: 'blue', items: ['SK Penugasan Kepala Konsentrasi', 'Struktur Organisasi', 'Rencana Kerja Tahunan (RKT)', 'Program Kerja', 'LAKIP Konsentrasi', 'Inventaris Peralatan', 'Kalender Akademik', 'Notulen Rapat'] },
-  { title: 'Kurikulum & Pembelajaran', icon: <BookOpen className="text-green-600 h-6 w-6" />, color: 'green', items: ['Kurikulum Merdeka SMK PK', 'Struktur Kurikulum', 'Capaian Pembelajaran (CP)', 'Silabus Mata Pelajaran', 'RPP/Modul Ajar', 'Program Semester & Tahunan', 'Bahan Ajar Digital', 'Bank Soal & Rubrik'] },
-  { title: 'Praktik & Bengkel', icon: <Wrench className="text-orange-600 h-6 w-6" />, color: 'orange', items: ['SOP Bengkel/Lab', 'Daftar Peralatan Praktik', 'Jadwal Laboratorium', 'Job Sheet Praktik', 'Pemeliharaan Alat', 'Logbook Peralatan', 'Dokumen K3', 'Peta Evakuasi & APD'] },
-  { title: 'Evaluasi & Penilaian', icon: <LineChart className="text-purple-600 h-6 w-6" />, color: 'purple', items: ['Kriteria Ketuntasan Minimal', 'Instrumen Penilaian', 'Rekap Nilai Siswa', 'Rubrik Ujian Praktik', 'Evaluasi PKL/Prakerin', 'Supervisi Pembelajaran', 'Monitoring & Evaluasi', 'Analisis Hasil Belajar'] },
-  { title: 'Kemitraan & Link and Match', icon: <Handshake className="text-red-600 h-6 w-6" />, color: 'red', items: ['MoU/PKS dengan DUDI', 'Kerjasama Instansi Maritim', 'Program PKL', 'Sinkronisasi Kurikulum', 'Data Alumni', 'Tracer Study'] },
-  { title: 'Ujian & Sertifikasi', icon: <Award className="text-indigo-600 h-6 w-6" />, color: 'indigo', items: ['Paket Soal UKK', 'SK Tim Pelaksana UKK', 'Asesmen Berbasis SKKNI', 'Dokumen LSP/TUK', 'Sertifikat Peserta Didik', 'BST, ATT, dll'] },
-  { title: 'Monitoring & Evaluasi', icon: <ClipboardCheck className="text-teal-600 h-6 w-6" />, color: 'teal', items: ['Instrumen Supervisi Guru', 'Evaluasi Pembelajaran', 'Analisis Hasil Belajar', 'Rekomendasi Perbaikan', 'Monitoring PKL Siswa'] },
-  { title: 'Dokumen Pendukung', icon: <FolderPlus className="text-yellow-600 h-6 w-6" />, color: 'yellow', items: ['Data Guru Produktif', 'Sertifikasi Kompetensi', 'Data Siswa Konsentrasi', 'Profil Konsentrasi', 'Dokumentasi Kegiatan', 'Media Digital Jurusan'] },
+  { title: 'Manajerial & Kelembagaan', icon: <Users className="text-blue-600 h-6 w-6" />, color: 'blue', items: ['SK Penugasan Kepala Konsentrasi', 'Struktur Organisasi', 'Rencana Kerja Tahunan (RKT)', 'Program Kerja', 'LAKIP Konsentrasi', 'Inventaris Peralatan', 'Kalender Akademik', 'Notulen Rapat'], driveLink: 'https://drive.google.com' },
+  { title: 'Kurikulum & Pembelajaran', icon: <BookOpen className="text-green-600 h-6 w-6" />, color: 'green', items: ['Kurikulum Merdeka SMK PK', 'Struktur Kurikulum', 'Capaian Pembelajaran (CP)', 'Silabus Mata Pelajaran', 'RPP/Modul Ajar', 'Program Semester & Tahunan', 'Bahan Ajar Digital', 'Bank Soal & Rubrik'], driveLink: 'https://drive.google.com' },
+  { title: 'Praktik & Bengkel', icon: <Wrench className="text-orange-600 h-6 w-6" />, color: 'orange', items: ['SOP Bengkel/Lab', 'Daftar Peralatan Praktik', 'Jadwal Laboratorium', 'Job Sheet Praktik', 'Pemeliharaan Alat', 'Logbook Peralatan', 'Dokumen K3', 'Peta Evakuasi & APD'], driveLink: 'https://drive.google.com' },
+  { title: 'Evaluasi & Penilaian', icon: <LineChart className="text-purple-600 h-6 w-6" />, color: 'purple', items: ['Kriteria Ketuntasan Minimal', 'Instrumen Penilaian', 'Rekap Nilai Siswa', 'Rubrik Ujian Praktik', 'Evaluasi PKL/Prakerin', 'Supervisi Pembelajaran', 'Monitoring & Evaluasi', 'Analisis Hasil Belajar'], driveLink: 'https://drive.google.com' },
+  { title: 'Kemitraan & Link and Match', icon: <Handshake className="text-red-600 h-6 w-6" />, color: 'red', items: ['MoU/PKS dengan DUDI', 'Kerjasama Instansi Maritim', 'Program PKL', 'Sinkronisasi Kurikulum', 'Data Alumni', 'Tracer Study'], driveLink: 'https://drive.google.com' },
+  { title: 'Ujian & Sertifikasi', icon: <Award className="text-indigo-600 h-6 w-6" />, color: 'indigo', items: ['Paket Soal UKK', 'SK Tim Pelaksana UKK', 'Asesmen Berbasis SKKNI', 'Dokumen LSP/TUK', 'Sertifikat Peserta Didik', 'BST, ATT, dll'], driveLink: 'https://drive.google.com' },
+  { title: 'Monitoring & Evaluasi', icon: <ClipboardCheck className="text-teal-600 h-6 w-6" />, color: 'teal', items: ['Instrumen Supervisi Guru', 'Evaluasi Pembelajaran', 'Analisis Hasil Belajar', 'Rekomendasi Perbaikan', 'Monitoring PKL Siswa'], driveLink: 'https://drive.google.com' },
+  { title: 'Dokumen Pendukung', icon: <FolderPlus className="text-yellow-600 h-6 w-6" />, color: 'yellow', items: ['Data Guru Produktif', 'Sertifikasi Kompetensi', 'Data Siswa Konsentrasi', 'Profil Konsentrasi', 'Dokumentasi Kegiatan', 'Media Digital Jurusan'], driveLink: 'https://drive.google.com' },
 ];
 
 const colorVariants = {
@@ -28,12 +27,6 @@ const colorVariants = {
 
 const Documents = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
-
-  const handleDownload = (category: string) => {
-    toast.info(`Mengunduh dokumen kategori: ${category}`, {
-      description: "Catatan: Ini adalah demo. Dalam implementasi nyata, file akan diunduh.",
-    });
-  };
 
   return (
     <section id="dokumen" ref={ref} className={`py-20 bg-gray-50 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -55,8 +48,10 @@ const Documents = () => {
                 <ul className="text-sm text-gray-600 space-y-2 flex-grow">
                   {cat.items.map(item => <li key={item}>• {item}</li>)}
                 </ul>
-                <Button onClick={() => handleDownload(cat.title)} className={`mt-4 w-full ${colors.button}`}>
-                  <Download className="mr-2 h-4 w-4" />Unduh
+                <Button asChild className={`mt-4 w-full ${colors.button}`}>
+                  <a href={cat.driveLink} target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-4 w-4" />Unduh
+                  </a>
                 </Button>
               </div>
             );

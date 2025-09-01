@@ -1,4 +1,3 @@
-import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Ship, Facebook, Instagram, Youtube, MapPin, Badge, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -43,7 +42,6 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">&copy; Jony Rabuansyah, S.ST - Kepala Konsentrasi Keahlian Teknika Kapal Niaga SMK Negeri 9 Pontianak. All rights reserved.</p>
-          <MadeWithDyad />
         </div>
       </div>
     </footer>

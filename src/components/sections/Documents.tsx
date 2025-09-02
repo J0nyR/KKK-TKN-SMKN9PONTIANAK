@@ -1,17 +1,30 @@
+import { useState } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { Button } from '@/components/ui/button';
-import { Users, BookOpen, Wrench, LineChart, Handshake, Award, ClipboardCheck, FolderPlus, Download } from 'lucide-react';
+import { Users, BookOpen, Wrench, LineChart, Handshake, Award, ClipboardCheck, FolderPlus, Download, Search } from 'lucide-react';
 import React from 'react';
 
-const documentCategories = [
-  { title: 'Manajerial & Kelembagaan', icon: <Users className="text-blue-600 h-6 w-6" />, color: 'blue', items: ['SK Penugasan Kepala Konsentrasi', 'Struktur Organisasi', 'Rencana Kerja Tahunan (RKT)', 'Program Kerja', 'LAKIP Konsentrasi', 'Inventaris Peralatan', 'Kalender Akademik', 'Notulen Rapat'], driveLink: 'https://drive.google.com/drive/folders/1iE_movw7JP0tykDdm6NqML4v59GYEAnD?usp=sharing' },
-  { title: 'Kurikulum & Pembelajaran', icon: <BookOpen className="text-green-600 h-6 w-6" />, color: 'green', items: ['Kurikulum Merdeka SMK PK', 'Struktur Kurikulum', 'Capaian Pembelajaran (CP)', 'Silabus Mata Pelajaran', 'RPP/Modul Ajar', 'Program Semester & Tahunan', 'Bahan Ajar Digital', 'Bank Soal & Rubrik'], driveLink: 'https://drive.google.com/drive/folders/1stdbjc_DQW74OSGJWaIhC0dZ02W5h1WO?usp=sharing' },
-  { title: 'Praktik & Bengkel', icon: <Wrench className="text-orange-600 h-6 w-6" />, color: 'orange', items: ['SOP Bengkel/Lab', 'Daftar Peralatan Praktik', 'Jadwal Laboratorium', 'Job Sheet Praktik', 'Pemeliharaan Alat', 'Logbook Peralatan', 'Dokumen K3', 'Peta Evakuasi & APD'], driveLink: 'https://drive.google.com/drive/folders/1LjIFVUrUtpxHUvXoJ9zbh3TNOrbE499G?usp=sharing' },
-  { title: 'Evaluasi & Penilaian', icon: <LineChart className="text-purple-600 h-6 w-6" />, color: 'purple', items: ['Kriteria Ketuntasan Minimal', 'Instrumen Penilaian', 'Rekap Nilai Siswa', 'Rubrik Ujian Praktik', 'Evaluasi PKL/Prakerin', 'Supervisi Pembelajaran', 'Monitoring & Evaluasi', 'Analisis Hasil Belajar'], driveLink: 'https://drive.google.com/drive/folders/1JA6NeWy1Ve26YtxqUfe53DSn0X1IXJAr?usp=sharing' },
-  { title: 'Kemitraan & Link and Match', icon: <Handshake className="text-red-600 h-6 w-6" />, color: 'red', items: ['MoU/PKS dengan DUDI', 'Kerjasama Instansi Maritim', 'Program PKL', 'Sinkronisasi Kurikulum', 'Data Alumni', 'Tracer Study'], driveLink: 'https://drive.google.com/drive/folders/1ntrL3ddeLjTYm6GezGWTiu7ZhKZ4Q97K?usp=sharing' },
-  { title: 'Ujian & Sertifikasi', icon: <Award className="text-indigo-600 h-6 w-6" />, color: 'indigo', items: ['Paket Soal UKK', 'SK Tim Pelaksana UKK', 'Asesmen Berbasis SKKNI', 'Dokumen LSP/TUK', 'Sertifikat Peserta Didik', 'BST, ATT, dll'], driveLink: 'https://drive.google.com/drive/folders/1G77b4Ij66Lm0gOQafiYwPgQKzp5Tw6FN?usp=sharing' },
-  { title: 'Monitoring & Evaluasi', icon: <ClipboardCheck className="text-teal-600 h-6 w-6" />, color: 'teal', items: ['Instrumen Supervisi Guru', 'Evaluasi Pembelajaran', 'Analisis Hasil Belajar', 'Rekomendasi Perbaikan', 'Monitoring PKL Siswa'], driveLink: 'https://drive.google.com/drive/folders/1X8jmQ88uaP2ssyZd-ZpZueME3Qs7m-tz?usp=sharing' },
-  { title: 'Dokumen Pendukung', icon: <FolderPlus className="text-yellow-600 h-6 w-6" />, color: 'yellow', items: ['Data Guru Produktif', 'Sertifikasi Kompetensi', 'Data Siswa Konsentrasi', 'Profil Konsentrasi', 'Dokumentasi Kegiatan', 'Media Digital Jurusan'], driveLink: 'https://drive.google.com/drive/folders/1mIUDyuB1na_Nq9M6__pZ_3GALq20GTvx?usp=sharing' },
+// Fungsi untuk mengambil thumbnail dari Google Drive
+// Catatan: Thumbnail hanya akan berfungsi jika file/folder di Google Drive diatur untuk dapat diakses publik.
+function getDriveThumbnail(driveUrl: string): string | null {
+  const match = driveUrl.match(/[-\w]{25,}/); // Mencari ID file/folder
+  if (!match) return null;
+  const fileId = match[0];
+  // Untuk folder, thumbnail mungkin tidak selalu tersedia atau relevan.
+  // Untuk file, formatnya biasanya drive.google.com/thumbnail?id=FILE_ID
+  // Untuk folder, ini mungkin tidak menghasilkan thumbnail yang berguna.
+  return `https://drive.google.com/thumbnail?id=${fileId}`;
+}
+
+const documentCategoriesData = [
+  { title: 'Manajerial & Kelembagaan', icon: <Users className="text-blue-600 h-6 w-6" />, color: 'blue', items: ['SK Penugasan Kepala Konsentrasi', 'Struktur Organisasi', 'Rencana Kerja Tahunan (RKT)', 'Program Kerja', 'LAKIP Konsentrasi', 'Inventaris Peralatan', 'Kalender Akademik', 'Notulen Rapat'], driveUrl: 'https://drive.google.com/drive/folders/1iE_movw7JP0tykDdm6NqML4v59GYEAnD?usp=sharing' },
+  { title: 'Kurikulum & Pembelajaran', icon: <BookOpen className="text-green-600 h-6 w-6" />, color: 'green', items: ['Kurikulum Merdeka SMK PK', 'Struktur Kurikulum', 'Capaian Pembelajaran (CP)', 'Silabus Mata Pelajaran', 'RPP/Modul Ajar', 'Program Semester & Tahunan', 'Bahan Ajar Digital', 'Bank Soal & Rubrik'], driveUrl: 'https://drive.google.com/drive/folders/1stdbjc_DQW74OSGJWaIhC0dZ02W5h1WO?usp=sharing' },
+  { title: 'Praktik & Bengkel', icon: <Wrench className="text-orange-600 h-6 w-6" />, color: 'orange', items: ['SOP Bengkel/Lab', 'Daftar Peralatan Praktik', 'Jadwal Laboratorium', 'Job Sheet Praktik', 'Pemeliharaan Alat', 'Logbook Peralatan', 'Dokumen K3', 'Peta Evakuasi & APD'], driveUrl: 'https://drive.google.com/drive/folders/1LjIFVUrUtpxHUvXoJ9zbh3TNOrbE499G?usp=sharing' },
+  { title: 'Evaluasi & Penilaian', icon: <LineChart className="text-purple-600 h-6 w-6" />, color: 'purple', items: ['Kriteria Ketuntasan Minimal', 'Instrumen Penilaian', 'Rekap Nilai Siswa', 'Rubrik Ujian Praktik', 'Evaluasi PKL/Prakerin', 'Supervisi Pembelajaran', 'Monitoring & Evaluasi', 'Analisis Hasil Belajar'], driveUrl: 'https://drive.google.com/drive/folders/1JA6NeWy1Ve26YtxqUfe53DSn0X1IXJAr?usp=sharing' },
+  { title: 'Kemitraan & Link and Match', icon: <Handshake className="text-red-600 h-6 w-6" />, color: 'red', items: ['MoU/PKS dengan DUDI', 'Kerjasama Instansi Maritim', 'Program PKL', 'Sinkronisasi Kurikulum', 'Data Alumni', 'Tracer Study'], driveUrl: 'https://drive.google.com/drive/folders/1ntrL3ddeLjTYm6GezGWTiu7ZhKZ4Q97K?usp=sharing' },
+  { title: 'Ujian & Sertifikasi', icon: <Award className="text-indigo-600 h-6 w-6" />, color: 'indigo', items: ['Paket Soal UKK', 'SK Tim Pelaksana UKK', 'Asesmen Berbasis SKKNI', 'Dokumen LSP/TUK', 'Sertifikat Peserta Didik', 'BST, ATT, dll'], driveUrl: 'https://drive.google.com/drive/folders/1G77b4Ij66Lm0gOQafiYwPgQKzp5Tw6FN?usp=sharing' },
+  { title: 'Monitoring & Evaluasi', icon: <ClipboardCheck className="text-teal-600 h-6 w-6" />, color: 'teal', items: ['Instrumen Supervisi Guru', 'Evaluasi Pembelajaran', 'Analisis Hasil Belajar', 'Rekomendasi Perbaikan', 'Monitoring PKL Siswa'], driveUrl: 'https://drive.google.com/drive/folders/1X8jmQ88uaP2ssyZd-ZpZueME3Qs7m-tz?usp=sharing' },
+  { title: 'Dokumen Pendukung', icon: <FolderPlus className="text-yellow-600 h-6 w-6" />, color: 'yellow', items: ['Data Guru Produktif', 'Sertifikasi Kompetensi', 'Data Siswa Konsentrasi', 'Profil Konsentrasi', 'Dokumentasi Kegiatan', 'Media Digital Jurusan'], driveUrl: 'https://drive.google.com/drive/folders/1mIUDyuB1na_Nq9M6__pZ_3GALq20GTvx?usp=sharing' },
 ];
 
 const colorVariants = {
@@ -26,7 +39,17 @@ const colorVariants = {
 };
 
 const Documents = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const { ref, isInView } = useInView({ threshold: 0.1 });
+
+  const filteredCategories = documentCategoriesData
+    .map((cat) => ({
+      ...cat,
+      items: cat.items.filter((item) =>
+        item.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    }))
+    .filter((cat) => cat.items.length > 0);
 
   return (
     <section id="dokumen" ref={ref} className={`py-20 bg-gray-50 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -36,11 +59,33 @@ const Documents = () => {
           <p className="text-lg text-gray-600">Koleksi lengkap dokumen administrasi dan manajerial Teknika Kapal Niaga</p>
         </div>
 
+        {/* Input Pencarian */}
+        <div className="relative max-w-md mx-auto mb-12">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Cari dokumen..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-3 pl-10 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          />
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {documentCategories.map((cat) => {
+          {filteredCategories.map((cat) => {
             const colors = colorVariants[cat.color as keyof typeof colorVariants];
+            const thumbnailUrl = getDriveThumbnail(cat.driveUrl);
             return (
               <div key={cat.title} className="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col">
+                {/* Thumbnail */}
+                {thumbnailUrl && (
+                  <img
+                    src={thumbnailUrl}
+                    alt={`Thumbnail ${cat.title}`}
+                    className="w-full h-32 object-cover rounded-md mb-4 border border-gray-200"
+                  />
+                )}
+
                 <div className={`w-12 h-12 ${colors.bg} rounded-lg flex items-center justify-center mb-4`}>
                   {cat.icon}
                 </div>
@@ -49,8 +94,8 @@ const Documents = () => {
                   {cat.items.map(item => <li key={item}>• {item}</li>)}
                 </ul>
                 <Button asChild className={`mt-4 w-full ${colors.button}`}>
-                  <a href={cat.driveLink} target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-4 w-4" />Unduh
+                  <a href={cat.driveUrl} target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-4 w-4" />Lihat di Google Drive
                   </a>
                 </Button>
               </div>

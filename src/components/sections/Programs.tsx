@@ -1,23 +1,24 @@
 import { useInView } from '@/hooks/useInView';
 import { Cog, Wrench, Anchor, Shield, Award, GraduationCap, ArrowRight } from 'lucide-react';
 import React from 'react';
+import { Button } from '@/components/ui/button'; // Import Button component
 
 const programData = [
-  { title: 'Mesin Induk Kapal', icon: <Cog className="text-white h-6 w-6" />, color: 'blue', description: 'Pemeliharaan dan operasional mesin utama kapal niaga sesuai standar internasional' },
-  { title: 'Mesin Bantu', icon: <Wrench className="text-white h-6 w-6" />, color: 'green', description: 'Sistem pendukung kapal meliputi generator, pompa, dan peralatan bantu lainnya' },
-  { title: 'Permesinan Geladak', icon: <Anchor className="text-white h-6 w-6" />, color: 'purple', description: 'Operasional crane, winch, dan peralatan geladak untuk kegiatan bongkar muat' },
-  { title: 'Keselamatan Kerja', icon: <Shield className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur K3 dan emergency response sesuai standar maritim internasional' },
-  { title: 'Sertifikasi', icon: <Award className="text-white h-6 w-6" />, color: 'red', description: 'Basic Safety Training sesuai STCW Convention untuk pelaut profesional' },
-  { title: 'Praktik Industri', icon: <GraduationCap className="text-white h-6 w-6" />, color: 'indigo', description: 'Program magang di perusahaan pelayaran terkemuka' },
+  { title: 'Mesin Induk Kapal', icon: <Cog className="text-white h-6 w-6" />, color: 'blue', description: 'Pemeliharaan dan operasional mesin utama kapal niaga sesuai standar internasional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_MESIN_INDUK_KAPAL_FOLDER_ID' },
+  { title: 'Mesin Bantu', icon: <Wrench className="text-white h-6 w-6" />, color: 'green', description: 'Sistem pendukung kapal meliputi generator, pompa, dan peralatan bantu lainnya', driveUrl: 'https://drive.google.com/drive/folders/YOUR_MESIN_BANTU_FOLDER_ID' },
+  { title: 'Permesinan Geladak', icon: <Anchor className="text-white h-6 w-6" />, color: 'purple', description: 'Operasional crane, winch, dan peralatan geladak untuk kegiatan bongkar muat', driveUrl: 'https://drive.google.com/drive/folders/YOUR_PERMESINAN_GELADAK_FOLDER_ID' },
+  { title: 'Keselamatan Kerja', icon: <Shield className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur K3 dan emergency response sesuai standar maritim internasional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_KESELAMATAN_KERJA_FOLDER_ID' },
+  { title: 'Sertifikasi', icon: <Award className="text-white h-6 w-6" />, color: 'red', description: 'Basic Safety Training sesuai STCW Convention untuk pelaut profesional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_SERTIFIKASI_FOLDER_ID' },
+  { title: 'Praktik Industri', icon: <GraduationCap className="text-white h-6 w-6" />, color: 'indigo', description: 'Program magang di perusahaan pelayaran terkemuka', driveUrl: 'https://drive.google.com/drive/folders/YOUR_PRAKTIK_INDUSTRI_FOLDER_ID' },
 ];
 
 const colorVariants = {
-  blue: { gradient: 'from-blue-50 to-blue-100', iconBg: 'bg-blue-600', text: 'text-blue-600' },
-  green: { gradient: 'from-green-50 to-green-100', iconBg: 'bg-green-600', text: 'text-green-600' },
-  purple: { gradient: 'from-purple-50 to-purple-100', iconBg: 'bg-purple-600', text: 'text-purple-600' },
-  orange: { gradient: 'from-orange-50 to-orange-100', iconBg: 'bg-orange-600', text: 'text-orange-600' },
-  red: { gradient: 'from-red-50 to-red-100', iconBg: 'bg-red-600', text: 'text-red-600' },
-  indigo: { gradient: 'from-indigo-50 to-indigo-100', iconBg: 'bg-indigo-600', text: 'text-indigo-600' },
+  blue: { gradient: 'from-blue-50 to-blue-100', iconBg: 'bg-blue-600', text: 'text-blue-600', button: 'bg-blue-600 hover:bg-blue-700' },
+  green: { gradient: 'from-green-50 to-green-100', iconBg: 'bg-green-600', text: 'text-green-600', button: 'bg-green-600 hover:bg-green-700' },
+  purple: { gradient: 'from-purple-50 to-purple-100', iconBg: 'bg-purple-600', text: 'text-purple-600', button: 'bg-purple-600 hover:bg-purple-700' },
+  orange: { gradient: 'from-orange-50 to-orange-100', iconBg: 'bg-orange-600', text: 'text-orange-600', button: 'bg-orange-600 hover:bg-orange-700' },
+  red: { gradient: 'from-red-50 to-red-100', iconBg: 'bg-red-600', text: 'text-red-600', button: 'bg-red-600 hover:bg-red-700' },
+  indigo: { gradient: 'from-indigo-50 to-indigo-100', iconBg: 'bg-indigo-600', text: 'text-indigo-600', button: 'bg-indigo-600 hover:bg-indigo-700' },
 };
 
 const Programs = () => {
@@ -35,15 +36,17 @@ const Programs = () => {
           {programData.map((program) => {
             const colors = colorVariants[program.color as keyof typeof colorVariants];
             return (
-              <div key={program.title} className={`bg-gradient-to-br ${colors.gradient} rounded-xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl`}>
+              <div key={program.title} className={`bg-gradient-to-br ${colors.gradient} rounded-xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col`}>
                 <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center mb-4`}>
                   {program.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{program.title}</h3>
-                <p className="text-gray-600 mb-4">{program.description}</p>
-                <div className={`flex items-center ${colors.text} font-medium`}>
-                  <ArrowRight className="mr-2 h-4 w-4" />Pelajari Lebih Lanjut
-                </div>
+                <p className="text-gray-600 mb-4 flex-grow">{program.description}</p>
+                <Button asChild className={`mt-4 w-full ${colors.button}`}>
+                  <a href={program.driveUrl} target="_blank" rel="noopener noreferrer">
+                    <ArrowRight className="mr-2 h-4 w-4" />Pelajari Lebih Lanjut
+                  </a>
+                </Button>
               </div>
             );
           })}

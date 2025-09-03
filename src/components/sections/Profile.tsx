@@ -18,7 +18,7 @@ const Profile = () => {
               <Eye className="text-white h-8 w-8" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Visi</h3>
-            <p className="text-gray-600">Menjadi pusat keunggulan pendidikan teknika kapal niaga yang menghasilkan lulusan berkarakter, kompeten, dan berdaya saing global</p>
+            <p className="text-gray-600">Menjadi Institusi Pendidikan yang Berstandar Internasional serta menghasilkan Sumber Daya Manusia yang Profesional, Kompeten, dan Kompetitif.</p>
           </div>
           
           <div className="text-center bg-green-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
@@ -26,15 +26,30 @@ const Profile = () => {
               <Target className="text-white h-8 w-8" />
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-3">Misi</h3>
-            <p className="text-gray-600">Menyelenggarakan pendidikan berkualitas dengan kurikulum yang selaras dengan kebutuhan industri maritim</p>
+            <ul className="text-gray-600 text-left list-disc list-inside space-y-1">
+              <li>Menanamkan Iman dan Takwa kepada Tuhan Yang Maha Esa;</li>
+              <li>Mengembangkan sumber daya manusia yang unggul dan berkarakter;</li>
+              <li>Meningkatkan kemampuan tenaga pendidik dan kependidikan yang berkompeten dan inovatif;</li>
+              <li>Meningkatkan tata kelola administrasi pendidikan yang transparan dan akuntabel berbasis pada sistem manajemen mutu ISO 9001:2015;</li>
+              <li>Menciptakan lingkungan sekolah yang kondusif, sehat, dan nyaman bagi warga sekolah;</li>
+              <li>Mengembangkan kerjasama dengan Dunia Usaha/ Dunia Industri dan berbagai lembaga terkait.</li>
+            </ul>
           </div>
           
           <div className="text-center bg-purple-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
             <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Trophy className="text-white h-8 w-8" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Unggulan</h3>
-            <p className="text-gray-600">Fasilitas bengkel modern, kerjasama industri yang kuat, dan sertifikasi kompetensi internasional</p>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">Tujuan</h3>
+            <ul className="text-gray-600 text-left list-disc list-inside space-y-1">
+              <li>Menghasilkan lulusan yang beriman, profesional, prima, dan berkarakter;</li>
+              <li>Menghasilkan lulusan yang memiliki kompetensi berstandard internasional;</li>
+              <li>Mewujudkan tenaga pendidik dan kependidikan yang mempunyai etos kerja dan kompetensi berstandar internasional;</li>
+              <li>Tercapainya sistem tata kelola administrasi pendidikan yang transparan dan akuntabel dengan sistem manajemen mutu ISO 9001:2015;</li>
+              <li>Terwujudnya layanan pendidikan yang mudah, ramah, dan fleksibel antara warga sekolah, masyarakat, dan Dunia Usaha/ Dunia Industri.</li>
+              <li>Mewujudkan lingkungan sekolah yang kondusif bagi warga sekolah.</li>
+              <li>Terciptanya kerjasama yang baik dengan Dunia Usaha/ Dunia Industri dan berbagai lembaga terkait untuk menyediakan lapangan pekerjaan yang luas.</li>
+            </ul>
           </div>
         </div>
       </div>

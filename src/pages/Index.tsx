@@ -1,5 +1,6 @@
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
+import AgendaSection from '@/components/sections/AgendaSection'; // Import komponen baru
 import Footer from '@/components/layout/Footer';
 
 const Index = () => {
@@ -8,6 +9,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <AgendaSection /> {/* Menambahkan komponen agenda di sini */}
       </main>
       <Footer />
     </div>

@@ -52,7 +52,7 @@ const Documents = () => {
     .filter((cat) => cat.items.length > 0);
 
   return (
-    <section id="dokumen" ref={ref} className={`py-20 bg-gray-50 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="dokumen" ref={ref} className={`py-20 bg-slate-50 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">📂 Dokumen Wajib Kepala Konsentrasi Keahlian</h2>

@@ -13,9 +13,9 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-4 text-sm">SMK Negeri 9 Pontianak - Konsentrasi Keahlian Teknika Kapal Niaga menghasilkan lulusan yang siap kerja di industri maritim.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-blue-400 transition duration-300"><Facebook /></a>
-              <a href="#" className="text-gray-300 hover:text-blue-400 transition duration-300"><Instagram /></a>
-              <a href="#" className="text-gray-300 hover:text-blue-400 transition duration-300"><Youtube /></a>
+              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition duration-300"><Facebook /></a>
+              <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition duration-300"><Instagram /></a>
+              <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition duration-300"><Youtube /></a>
             </div>
           </div>
           

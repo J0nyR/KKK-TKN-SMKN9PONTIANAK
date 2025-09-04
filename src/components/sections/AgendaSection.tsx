@@ -30,25 +30,25 @@ const AgendaSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section id="agenda" ref={ref} className={`py-20 bg-gray-100 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="agenda" ref={ref} className={`py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-indigo-800 text-white transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Agenda Kegiatan</h2>
-          <p className="text-lg text-gray-600">Informasi kegiatan penting Teknika Kapal Niaga</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Agenda Kegiatan</h2>
+          <p className="text-lg text-blue-100">Informasi kegiatan penting Teknika Kapal Niaga</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <Tabs defaultValue="bulan-ini" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="bulan-lalu">Bulan Lalu</TabsTrigger>
-              <TabsTrigger value="bulan-ini">Bulan Ini</TabsTrigger>
-              <TabsTrigger value="bulan-depan">Bulan Depan</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-3 bg-blue-800 text-white">
+              <TabsTrigger value="bulan-lalu" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Bulan Lalu</TabsTrigger>
+              <TabsTrigger value="bulan-ini" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Bulan Ini</TabsTrigger>
+              <TabsTrigger value="bulan-depan" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Bulan Depan</TabsTrigger>
             </TabsList>
             <TabsContent value="bulan-lalu" className="mt-6">
               <div className="space-y-4">
                 {agendaData['bulan-lalu'].length > 0 ? (
                   agendaData['bulan-lalu'].map((item, index) => (
-                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white text-gray-800">
                       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
                         <CalendarDays className="h-5 w-5 text-muted-foreground" />
@@ -60,7 +60,7 @@ const AgendaSection = () => {
                     </Card>
                   ))
                 ) : (
-                  <p className="text-center text-gray-500">Tidak ada agenda untuk bulan lalu.</p>
+                  <p className="text-center text-blue-200">Tidak ada agenda untuk bulan lalu.</p>
                 )}
               </div>
             </TabsContent>
@@ -68,7 +68,7 @@ const AgendaSection = () => {
               <div className="space-y-4">
                 {agendaData['bulan-ini'].length > 0 ? (
                   agendaData['bulan-ini'].map((item, index) => (
-                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white text-gray-800">
                       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
                         <CalendarDays className="h-5 w-5 text-muted-foreground" />
@@ -80,7 +80,7 @@ const AgendaSection = () => {
                     </Card>
                   ))
                 ) : (
-                  <p className="text-center text-gray-500">Tidak ada agenda untuk bulan ini.</p>
+                  <p className="text-center text-blue-200">Tidak ada agenda untuk bulan ini.</p>
                 )}
               </div>
             </TabsContent>
@@ -88,7 +88,7 @@ const AgendaSection = () => {
               <div className="space-y-4">
                 {agendaData['bulan-depan'].length > 0 ? (
                   agendaData['bulan-depan'].map((item, index) => (
-                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white text-gray-800">
                       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
                         <CalendarDays className="h-5 w-5 text-muted-foreground" />
@@ -100,7 +100,7 @@ const AgendaSection = () => {
                     </Card>
                   ))
                 ) : (
-                  <p className="text-center text-gray-500">Tidak ada agenda untuk bulan depan.</p>
+                  <p className="text-center text-blue-200">Tidak ada agenda untuk bulan depan.</p>
                 )}
               </div>
             </TabsContent>

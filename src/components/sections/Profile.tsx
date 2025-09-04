@@ -12,7 +12,8 @@ const Profile = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">Teknika Kapal Niaga SMK Negeri 9 Pontianak berkomitmen menghasilkan lulusan yang kompeten di bidang maritim</p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="max-w-4xl mx-auto flex flex-col gap-8 mb-16">
+          {/* Visi */}
           <div className="text-center bg-blue-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Eye className="text-white h-8 w-8" />
@@ -21,12 +22,13 @@ const Profile = () => {
             <p className="text-gray-600">Menjadi Institusi Pendidikan yang Berstandar Internasional serta menghasilkan Sumber Daya Manusia yang Profesional, Kompeten, dan Kompetitif.</p>
           </div>
           
-          <div className="text-center bg-green-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+          {/* Misi */}
+          <div className="bg-green-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
             <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Target className="text-white h-8 w-8" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Misi</h3>
-            <ul className="text-gray-600 text-left list-disc list-inside space-y-1">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Misi</h3>
+            <ul className="text-gray-600 text-left list-disc list-inside space-y-1 max-w-2xl mx-auto">
               <li>Menanamkan Iman dan Takwa kepada Tuhan Yang Maha Esa;</li>
               <li>Mengembangkan sumber daya manusia yang unggul dan berkarakter;</li>
               <li>Meningkatkan kemampuan tenaga pendidik dan kependidikan yang berkompeten dan inovatif;</li>
@@ -36,12 +38,13 @@ const Profile = () => {
             </ul>
           </div>
           
-          <div className="text-center bg-purple-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+          {/* Tujuan */}
+          <div className="bg-purple-50 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
             <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <Trophy className="text-white h-8 w-8" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">Tujuan</h3>
-            <ul className="text-gray-600 text-left list-disc list-inside space-y-1">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">Tujuan</h3>
+            <ul className="text-gray-600 text-left list-disc list-inside space-y-1 max-w-2xl mx-auto">
               <li>Menghasilkan lulusan yang beriman, profesional, prima, dan berkarakter;</li>
               <li>Menghasilkan lulusan yang memiliki kompetensi berstandard internasional;</li>
               <li>Mewujudkan tenaga pendidik dan kependidikan yang mempunyai etos kerja dan kompetensi berstandar internasional;</li>

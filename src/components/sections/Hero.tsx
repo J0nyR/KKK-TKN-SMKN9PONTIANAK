@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section id="beranda" className="relative text-white pt-20 overflow-hidden">
+    <section id="beranda" className="relative text-white overflow-hidden"> {/* Removed pt-20 */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-700 to-indigo-800"></div>
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 py-24 text-center"> {/* Added pt-16 here */}
         <div className="space-y-6 mb-16">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent animate-fade-in">
             Selamat Datang

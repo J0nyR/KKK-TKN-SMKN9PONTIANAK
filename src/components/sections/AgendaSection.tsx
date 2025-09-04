@@ -31,7 +31,7 @@ const AgendaSection = () => {
 
   return (
     <section id="agenda" ref={ref} className={`relative py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-indigo-800 text-white transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0))] opacity-20"></div>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0))] opacity-30"></div> {/* Changed opacity-20 to opacity-30 */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Agenda Kegiatan</h2>

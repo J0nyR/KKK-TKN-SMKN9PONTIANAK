@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <div className="font-sans">
       <Navbar />
-      <main>
+      <main className="pt-16"> {/* Added pt-16 here */}
         <Hero />
         <AgendaSection /> {/* Menambahkan komponen agenda di sini */}
       </main>

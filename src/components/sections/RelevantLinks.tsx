@@ -12,8 +12,8 @@ interface LinkItem {
 
 const relevantLinksData: LinkItem[] = [
   { title: 'Fisika Kelautan', url: 'https://example.com/fisika-kelautan', description: 'Mempelajari prinsip fisika dalam lingkungan laut.' },
-  { title: 'Navigasi Maritim', url: 'https://example.com/navigasi-maritim', description: 'Panduan lengkap tentang navigasi kapal.' },
-  { title: 'Mesin Kapal Diesel', url: 'https://example.com/mesin-diesel', description: 'Dasar-dasar dan perawatan mesin diesel kapal.' },
+  { title: 'Perpustakaan TKN', url: 'https://libtknsmkn9.vercel.app/', description: 'Akses digital terhadap buku, film, PPT wajib dan reff IMO.' },
+  { title: 'Inventaris Tkn', url: 'https://inv-tkn-smkn-9.vercel.app/', description: 'Permesin, Peralatan, Bahan-bahan Praktik Prodi TKN' },
   { title: 'Hukum Maritim Internasional', url: 'https://example.com/hukum-maritim', description: 'Peraturan dan konvensi di dunia pelayaran.' },
   { title: 'Teknologi Perikanan', url: 'https://example.com/teknologi-perikanan', description: 'Inovasi dalam penangkapan dan budidaya ikan.' },
   { title: 'Meteorologi Kelautan', url: 'https://example.com/meteorologi', description: 'Prediksi cuaca dan iklim di laut.' },

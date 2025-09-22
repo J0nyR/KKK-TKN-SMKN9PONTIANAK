@@ -15,11 +15,7 @@ const relevantLinksData: LinkItem[] = [
   { title: 'Perpustakaan TKN', url: 'https://libtknsmkn9.vercel.app/', description: 'Akses digital terhadap buku, film, PPT wajib dan reff IMO.' },
   { title: 'Inventaris Tkn', url: 'https://inv-tkn-smkn-9.vercel.app/', description: 'Permesin, Peralatan, Bahan-bahan Praktik Prodi TKN' },
   { title: 'UKP SMKN 9 Pontianak', url: 'https://ukp-tkn-smkn9.vercel.app/', description: 'Uji Kompetensi Pelaut SMK Negeri 9 Pontianak.' },
-  { title: 'Teknologi Perikanan', url: 'https://example.com/teknologi-perikanan', description: 'Inovasi dalam penangkapan dan budidaya ikan.' },
-  { title: 'Meteorologi Kelautan', url: 'https://example.com/meteorologi', description: 'Prediksi cuaca dan iklim di laut.' },
-  { title: 'Keselamatan Pelayaran', url: 'https://example.com/keselamatan', description: 'Prosedur dan standar keselamatan di kapal.' },
-  { title: 'Manajemen Pelabuhan', url: 'https://example.com/manajemen-pelabuhan', description: 'Operasional dan pengelolaan fasilitas pelabuhan.' },
-  { title: 'Elektronika Maritim', url: 'https://example.com/elektronika-maritim', description: 'Sistem elektronik dan komunikasi kapal.' },
+  // Tautan-tautan berikut telah dihapus sesuai permintaan
 ];
 
 const RelevantLinks = () => {

@@ -4,9 +4,9 @@ import React from 'react';
 import { Button } from '@/components/ui/button'; // Import Button component
 
 const programData = [
-  { title: 'Mesin Induk Kapal', icon: <Cog className="text-white h-6 w-6" />, color: 'blue', description: 'Pemeliharaan dan operasional mesin utama kapal niaga sesuai standar internasional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_MESIN_INDUK_KAPAL_FOLDER_ID' },
-  { title: 'Mesin Bantu', icon: <Wrench className="text-white h-6 w-6" />, color: 'green', description: 'Sistem pendukung kapal meliputi generator, pompa, dan peralatan bantu lainnya', driveUrl: 'https://drive.google.com/drive/folders/YOUR_MESIN_BANTU_FOLDER_ID' },
-  { title: 'Permesinan Geladak', icon: <Anchor className="text-white h-6 w-6" />, color: 'purple', description: 'Operasional crane, winch, dan peralatan geladak untuk kegiatan bongkar muat', driveUrl: 'https://drive.google.com/drive/folders/YOUR_PERMESINAN_GELADAK_FOLDER_ID' },
+  { title: 'Bahasa Inggris Maritim 1', icon: <Cog className="text-white h-6 w-6" />, color: 'blue', description: 'Materi dasar Bahasa Inggris untuk komunikasi di lingkungan maritim.', driveUrl: 'https://bim-1.vercel.app/' },
+  { title: 'Bahasa Inggris Maritim 2', icon: <Wrench className="text-white h-6 w-6" />, color: 'green', description: 'Materi lanjutan Bahasa Inggris untuk operasional dan prosedur kapal.', driveUrl: 'https://bim-2.vercel.app/' },
+  { title: 'Bahasa Inggris Maritim 3', icon: <Anchor className="text-white h-6 w-6" />, color: 'purple', description: 'Bahasa Inggris khusus untuk sertifikasi dan dokumen pelayaran internasional.', driveUrl: 'https://bim-3.vercel.app/' },
   { title: 'Keselamatan Kerja', icon: <Shield className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur K3 dan emergency response sesuai standar maritim internasional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_KESELAMATAN_KERJA_FOLDER_ID' },
   { title: 'Sertifikasi', icon: <Award className="text-white h-6 w-6" />, color: 'red', description: 'Basic Safety Training sesuai STCW Convention untuk pelaut profesional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_SERTIFIKASI_FOLDER_ID' },
   { title: 'Praktik Industri', icon: <GraduationCap className="text-white h-6 w-6" />, color: 'indigo', description: 'Program magang di perusahaan pelayaran terkemuka', driveUrl: 'https://drive.google.com/drive/folders/YOUR_PRAKTIK_INDUSTRI_FOLDER_ID' },

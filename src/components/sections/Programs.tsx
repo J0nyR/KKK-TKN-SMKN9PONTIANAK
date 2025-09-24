@@ -1,5 +1,5 @@
 import { useInView } from '@/hooks/useInView';
-import { Cog, Wrench, Anchor, Settings, Award, GraduationCap, ArrowRight, Leaf } from 'lucide-react'; // Import Settings icon
+import { Cog, Wrench, Anchor, Settings, Award, GraduationCap, ArrowRight, Leaf } from 'lucide-react';
 import React from 'react';
 import { Button } from '@/components/ui/button'; // Import Button component
 
@@ -7,8 +7,9 @@ const programData = [
   { title: 'Bahasa Inggris Maritim 1', icon: <Cog className="text-white h-6 w-6" />, color: 'blue', description: 'Materi dasar Bahasa Inggris untuk komunikasi di lingkungan maritim.', driveUrl: 'https://bim-1.vercel.app/' },
   { title: 'Bahasa Inggris Maritim 2', icon: <Wrench className="text-white h-6 w-6" />, color: 'green', description: 'Materi lanjutan Bahasa Inggris untuk operasional dan prosedur kapal.', driveUrl: 'https://bim-2.vercel.app/' },
   { title: 'Bahasa Inggris Maritim 3', icon: <Anchor className="text-white h-6 w-6" />, color: 'purple', description: 'Bahasa Inggris khusus untuk sertifikasi dan dokumen pelayaran internasional.', driveUrl: 'https://bim-3.vercel.app/' },
-  { title: 'Dinas Jaga Mesin', icon: <Settings className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur dan praktik dinas jaga mesin di kapal niaga sesuai standar internasional.', driveUrl: 'https://dnj-tkn.vercel.app/' }, // Kartu diperbarui
+  { title: 'Dinas Jaga Mesin', icon: <Settings className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur dan praktik dinas jaga mesin di kapal niaga sesuai standar internasional.', driveUrl: 'https://dnj-tkn.vercel.app/' },
   { title: 'Kepedulian Lingkungan & Pencegahan Polusi', icon: <Leaf className="text-white h-6 w-6" />, color: 'teal', description: 'Mempelajari praktik terbaik untuk menjaga kelestarian lingkungan maritim dan mencegah polusi laut.', driveUrl: 'https://kl-pp-tkn.vercel.app/' },
+  { title: 'Mesin Penggerak Utama 1', icon: <Cog className="text-white h-6 w-6" />, color: 'red', description: 'Mempelajari komponen, prinsip kerja, dan perawatan mesin penggerak utama kapal.', driveUrl: 'https://mpu-1.vercel.app/' }, // Kartu baru
 ];
 
 const colorVariants = {

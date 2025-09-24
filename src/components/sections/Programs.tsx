@@ -1,5 +1,5 @@
 import { useInView } from '@/hooks/useInView';
-import { Cog, Wrench, Anchor, Shield, Award, GraduationCap, ArrowRight } from 'lucide-react';
+import { Cog, Wrench, Anchor, Shield, Award, GraduationCap, ArrowRight, Leaf } from 'lucide-react'; // Import Leaf icon
 import React from 'react';
 import { Button } from '@/components/ui/button'; // Import Button component
 
@@ -10,6 +10,7 @@ const programData = [
   { title: 'Keselamatan Kerja', icon: <Shield className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur K3 dan emergency response sesuai standar maritim internasional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_KESELAMATAN_KERJA_FOLDER_ID' },
   { title: 'Sertifikasi', icon: <Award className="text-white h-6 w-6" />, color: 'red', description: 'Basic Safety Training sesuai STCW Convention untuk pelaut profesional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_SERTIFIKASI_FOLDER_ID' },
   { title: 'Praktik Industri', icon: <GraduationCap className="text-white h-6 w-6" />, color: 'indigo', description: 'Program magang di perusahaan pelayaran terkemuka', driveUrl: 'https://drive.google.com/drive/folders/YOUR_PRAKTIK_INDUSTRI_FOLDER_ID' },
+  { title: 'Kepedulian Lingkungan & Pencegahan Polusi', icon: <Leaf className="text-white h-6 w-6" />, color: 'teal', description: 'Mempelajari praktik terbaik untuk menjaga kelestarian lingkungan maritim dan mencegah polusi laut.', driveUrl: 'https://kl-pp-tkn.vercel.app/' }, // Kartu baru
 ];
 
 const colorVariants = {
@@ -19,6 +20,7 @@ const colorVariants = {
   orange: { gradient: 'from-orange-50 to-orange-100', iconBg: 'bg-orange-600', text: 'text-orange-600', button: 'bg-orange-600 hover:bg-orange-700' },
   red: { gradient: 'from-red-50 to-red-100', iconBg: 'bg-red-600', text: 'text-red-600', button: 'bg-red-600 hover:bg-red-700' },
   indigo: { gradient: 'from-indigo-50 to-indigo-100', iconBg: 'bg-indigo-600', text: 'text-indigo-600', button: 'bg-indigo-600 hover:bg-indigo-700' },
+  teal: { gradient: 'from-teal-50 to-teal-100', iconBg: 'bg-teal-600', text: 'text-teal-600', button: 'bg-teal-600 hover:bg-teal-700' }, // Varian warna baru
 };
 
 const Programs = () => {

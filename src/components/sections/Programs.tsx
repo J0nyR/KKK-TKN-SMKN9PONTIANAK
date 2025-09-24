@@ -8,8 +8,6 @@ const programData = [
   { title: 'Bahasa Inggris Maritim 2', icon: <Wrench className="text-white h-6 w-6" />, color: 'green', description: 'Materi lanjutan Bahasa Inggris untuk operasional dan prosedur kapal.', driveUrl: 'https://bim-2.vercel.app/' },
   { title: 'Bahasa Inggris Maritim 3', icon: <Anchor className="text-white h-6 w-6" />, color: 'purple', description: 'Bahasa Inggris khusus untuk sertifikasi dan dokumen pelayaran internasional.', driveUrl: 'https://bim-3.vercel.app/' },
   { title: 'Dinas Jaga Mesin', icon: <Settings className="text-white h-6 w-6" />, color: 'orange', description: 'Prosedur dan praktik dinas jaga mesin di kapal niaga sesuai standar internasional.', driveUrl: 'https://dnj-tkn.vercel.app/' }, // Kartu diperbarui
-  { title: 'Sertifikasi', icon: <Award className="text-white h-6 w-6" />, color: 'red', description: 'Basic Safety Training sesuai STCW Convention untuk pelaut profesional', driveUrl: 'https://drive.google.com/drive/folders/YOUR_SERTIFIKASI_FOLDER_ID' },
-  { title: 'Praktik Industri', icon: <GraduationCap className="text-white h-6 w-6" />, color: 'indigo', description: 'Program magang di perusahaan pelayaran terkemuka', driveUrl: 'https://drive.google.com/drive/folders/YOUR_PRAKTIK_INDUSTRI_FOLDER_ID' },
   { title: 'Kepedulian Lingkungan & Pencegahan Polusi', icon: <Leaf className="text-white h-6 w-6" />, color: 'teal', description: 'Mempelajari praktik terbaik untuk menjaga kelestarian lingkungan maritim dan mencegah polusi laut.', driveUrl: 'https://kl-pp-tkn.vercel.app/' },
 ];
 

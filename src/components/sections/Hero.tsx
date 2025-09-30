@@ -63,14 +63,14 @@ const Hero = () => {
             <p className="text-blue-200 text-sm">Visi, misi, dan keunggulan konsentrasi keahlian</p>
           </Link>
         </div>
-
+        
         {/* Bagian Agenda */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Agenda Kegiatan</h2>
           <p className="text-lg text-blue-100">Informasi kegiatan penting Teknika Kapal Niaga</p>
         </div>
         <div className="max-w-4xl mx-auto">
-          <Tabs defaultValue="bulan-ini" className="w-full">
+          <Tabs defaultValue="bulan-lalu" className="w-full"> {/* Changed defaultValue to "bulan-lalu" */}
             <TabsList className="grid w-full grid-cols-3 bg-blue-800 text-white">
               <TabsTrigger value="bulan-lalu" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Bulan Lalu</TabsTrigger>
               <TabsTrigger value="bulan-ini" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Bulan Ini</TabsTrigger>

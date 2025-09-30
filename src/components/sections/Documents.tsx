@@ -13,8 +13,8 @@ const documentCategoriesData = [
   { title: 'Ujian & Sertifikasi', icon: <Award className="text-indigo-600 h-8 w-8" />, color: 'indigo', items: ['Paket Soal UKK', 'SK Tim Pelaksana UKK', 'Asesmen Berbasis SKKNI', 'Dokumen LSP/TUK', 'Sertifikat Peserta Didik', 'BST, ATT, dll'], driveUrl: 'https://drive.google.com/drive/folders/1G77b4Ij66Lm0gOQafiYwPgQKzp5Tw6FN?usp=sharing' },
   { title: 'Monitoring & Evaluasi', icon: <ClipboardCheck className="text-teal-600 h-8 w-8" />, color: 'teal', items: ['Instrumen Supervisi Guru', 'Evaluasi Pembelajaran', 'Analisis Hasil Belajar', 'Rekomendasi Perbaikan', 'Monitoring PKL Siswa'], driveUrl: 'https://drive.google.com/drive/folders/1X8jmQ88uaP2ssyZd-ZpZueME3Qs7m-tz?usp=sharing' },
   { title: 'Dokumen Pendukung', icon: <FolderPlus className="text-yellow-600 h-8 w-8" />, color: 'yellow', items: ['Data Guru Produktif', 'Sertifikasi Kompetensi', 'Data Siswa Konsentrasi', 'Profil Konsentrasi', 'Dokumentasi Kegiatan', 'Media Digital Jurusan'], driveUrl: 'https://drive.google.com/drive/folders/1mIUDyuB1na_Nq9M6__pZ_3GALq20GTvx?usp=sharing' },
-  { title: 'ISO', icon: <Award className="text-gray-600 h-8 w-8" />, color: 'gray', items: ['Sertifikat ISO 9001:2015', 'Prosedur Mutu', 'Audit Internal', 'Tinjauan Manajemen'], driveUrl: 'https://drive.google.com/drive/folders/YOUR_ISO_FOLDER_ID' }, // Kartu baru
-  { title: '8 Standar Pendidikan', icon: <ClipboardCheck className="text-lime-600 h-8 w-8" />, color: 'lime', items: ['Standar Kompetensi Lulusan', 'Standar Isi', 'Standar Proses', 'Standar Penilaian', 'Standar Pendidik & Tenaga Kependidikan', 'Standar Sarana & Prasarana', 'Standar Pengelolaan', 'Standar Pembiayaan'], driveUrl: 'https://drive.google.com/drive/folders/YOUR_8_STANDAR_PENDIDIKAN_FOLDER_ID' }, // Kartu baru
+  { title: 'ISO', icon: <Award className="text-gray-600 h-8 w-8" />, color: 'gray', items: ['Sertifikat ISO 9001:2015', 'Prosedur Mutu', 'Audit Internal', 'Tinjauan Manajemen'], driveUrl: 'https://drive.google.com/drive/folders/1adIxlZA2aMF_gbgQO5zVtI6BkWwtw19s?usp=sharing' }, // Tautan ISO diperbarui
+  { title: '8 Standar Pendidikan', icon: <ClipboardCheck className="text-lime-600 h-8 w-8" />, color: 'lime', items: ['Standar Kompetensi Lulusan', 'Standar Isi', 'Standar Proses', 'Standar Penilaian', 'Standar Pendidik & Tenaga Kependidikan', 'Standar Sarana & Prasarana', 'Standar Pengelolaan', 'Standar Pembiayaan'], driveUrl: 'https://drive.google.com/drive/folders/1unERbo8cd49wAbUIC9N3M9rNv-W5g1pg?usp=sharing' }, // Tautan 8 Standar Pendidikan diperbarui
 ];
 
 const colorVariants = {
@@ -26,8 +26,8 @@ const colorVariants = {
   indigo: { bg: 'bg-indigo-100', button: 'bg-indigo-600 hover:bg-indigo-700' },
   teal: { bg: 'bg-teal-100', button: 'bg-teal-600 hover:bg-teal-700' },
   yellow: { bg: 'bg-yellow-100', button: 'bg-yellow-600 hover:bg-yellow-700' },
-  gray: { bg: 'bg-gray-100', button: 'bg-gray-600 hover:bg-gray-700' }, // Varian warna baru
-  lime: { bg: 'bg-lime-100', button: 'bg-lime-600 hover:bg-lime-700' }, // Varian warna baru
+  gray: { bg: 'bg-gray-100', button: 'bg-gray-600 hover:bg-gray-700' },
+  lime: { bg: 'bg-lime-100', button: 'bg-lime-600 hover:bg-lime-700' },
 };
 
 const Documents = () => {

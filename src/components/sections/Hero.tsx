@@ -7,18 +7,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 // Data untuk Agenda
 const agendaData = {
   'bulan-lalu': [
-    { title: 'Rapat Koordinasi Kurikulum', date: '15 Juli 2024', description: 'Pembahasan evaluasi kurikulum semester genap.' },
-    { title: 'Pelatihan K3 Bengkel', date: '20 Juli 2024', description: 'Pelatihan keselamatan kerja di bengkel untuk siswa dan guru.' },
+    { title: 'Rapat Koordinasi Kurikulum', date: '15 Juli 2025', description: 'Pembahasan evaluasi kurikulum semester genap.' },
+    { title: 'Pelatihan K3 Bengkel', date: '20 Juli 2025', description: 'Pelatihan keselamatan kerja di bengkel untuk siswa dan guru.' },
+    { title: 'Pendaftaran Siswa Baru', date: '1-31 Agustus 2025', description: 'Pembukaan pendaftaran untuk tahun ajaran baru.' },
+    { title: 'Orientasi Siswa Baru', date: '5 Agustus 2025', description: 'Pengenalan lingkungan sekolah dan program keahlian.' },
+    { title: 'Upacara Bendera HUT RI', date: '17 Agustus 2025', description: 'Perayaan Hari Kemerdekaan Republik Indonesia.' },
+    { title: 'Ujian Tengah Semester', date: '15-20 September 2025', description: 'Pelaksanaan ujian tengah semester ganjil.' },
+    { title: 'Kunjungan Industri', date: '25 September 2025', description: 'Kunjungan ke perusahaan pelayaran mitra industri.' },
   ],
-  'bulan-ini': [
-    { title: 'Pendaftaran Siswa Baru', date: '1-31 Agustus 2024', description: 'Pembukaan pendaftaran untuk tahun ajaran baru.' },
-    { title: 'Orientasi Siswa Baru', date: '5 Agustus 2024', description: 'Pengenalan lingkungan sekolah dan program keahlian.' },
-    { title: 'Upacara Bendera HUT RI', date: '17 Agustus 2024', description: 'Perayaan Hari Kemerdekaan Republik Indonesia.' },
-  ],
-  'bulan-depan': [
-    { title: 'Ujian Tengah Semester', date: '15-20 September 2024', description: 'Pelaksanaan ujian tengah semester ganjil.' },
-    { title: 'Kunjungan Industri', date: '25 September 2024', description: 'Kunjungan ke perusahaan pelayaran mitra industri.' },
-  ],
+  'bulan-ini': [], // Dikosongkan untuk bulan Oktober 2025
+  'bulan-depan': [], // Dikosongkan
 };
 
 const Hero = () => {
@@ -96,34 +94,42 @@ const Hero = () => {
             </TabsContent>
             <TabsContent value="bulan-ini" className="mt-6">
               <div className="space-y-4">
-                {agendaData['bulan-ini'].map((item, index) => (
-                  <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/10 text-white border border-white/20">
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
-                      <CalendarDays className="h-5 w-5 text-blue-200" />
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-blue-100 mb-2">{item.date}</p>
-                      <p className="text-sm text-blue-50">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                {agendaData['bulan-ini'].length > 0 ? (
+                  agendaData['bulan-ini'].map((item, index) => (
+                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/10 text-white border border-white/20">
+                      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                        <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
+                        <CalendarDays className="h-5 w-5 text-blue-200" />
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-blue-100 mb-2">{item.date}</p>
+                        <p className="text-sm text-blue-50">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <p className="text-center text-blue-200">Tidak ada agenda untuk bulan ini.</p>
+                )}
               </div>
             </TabsContent>
             <TabsContent value="bulan-depan" className="mt-6">
               <div className="space-y-4">
-                {agendaData['bulan-depan'].map((item, index) => (
-                  <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/10 text-white border border-white/20">
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                      <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
-                      <CalendarDays className="h-5 w-5 text-blue-200" />
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-blue-100 mb-2">{item.date}</p>
-                      <p className="text-sm text-blue-50">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                {agendaData['bulan-depan'].length > 0 ? (
+                  agendaData['bulan-depan'].map((item, index) => (
+                    <Card key={index} className="shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/10 text-white border border-white/20">
+                      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                        <CardTitle className="text-lg font-semibold">{item.title}</CardTitle>
+                        <CalendarDays className="h-5 w-5 text-blue-200" />
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-blue-100 mb-2">{item.date}</p>
+                        <p className="text-sm text-blue-50">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <p className="text-center text-blue-200">Tidak ada agenda untuk bulan depan.</p>
+                )}
               </div>
             </TabsContent>
           </Tabs>
